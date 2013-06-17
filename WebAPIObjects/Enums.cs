@@ -66,6 +66,7 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 	/// CAN = Exch. Canceled Orders
 	/// LAT = Too Late Orders
 	/// DON = Queued Orders
+	/// UCH = Replaced Orders
 	/// </summary>
 	public enum OrderState
 	{
@@ -78,7 +79,8 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 		BRO,
 		CAN,
 		LAT,
-		DON
+		DON,
+		UCH
 	}
 
 	public enum OrderType
