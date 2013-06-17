@@ -4,6 +4,52 @@ using System.Diagnostics;
 namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 {
 	[Serializable]
+	public class SymbolBarData : IntradayBarData
+	{
+		public string Symbol { get; set; }
+
+		#region overloads and overrides
+
+		public static bool operator ==(SymbolBarData lhs, SymbolBarData rhs)
+		{
+			if (ReferenceEquals(lhs, rhs))
+				return true;
+			if (ReferenceEquals(lhs, null) || ReferenceEquals(rhs, null))
+				return false;
+			return lhs.Symbol == rhs.Symbol &&
+				   lhs == ((IntradayBarData)rhs);
+		}
+
+		public static bool operator !=(SymbolBarData lhs, SymbolBarData rhs)
+		{
+			return !(lhs == rhs);
+		}
+
+		public bool Equals(SymbolBarData token)
+		{
+			return this == token;
+		}
+
+		public override bool Equals(object obj)
+		{
+			return Equals(obj as SymbolBarData);
+		}
+
+		public override int GetHashCode()
+		{
+			return ToString().GetHashCode();
+		}
+
+		public override string ToString()
+		{
+			return string.Format("Symbol: {0} {1}", Symbol, base.ToString());
+		}
+
+		#endregion overloads and overrides
+
+	}
+
+	[Serializable]
 	public class IntradayBarData
 	{
 		public decimal Close { get; set; }
