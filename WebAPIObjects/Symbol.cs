@@ -9,6 +9,7 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 		public string Name { get; set; }
 		public string Description { get; set; }
 		public string Exchange { get; set; }
+		public int ExchangeId { get; set; }
 		public string Category { get; set; }
 		public CountryCode Country { get; set; }
 		public string Root { get; set; }
@@ -35,6 +36,7 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 				   lhs.Description == rhs.Description &&
 				   lhs.Error == rhs.Error &&
 				   lhs.Exchange == rhs.Exchange &&
+				   lhs.ExchangeId == rhs.ExchangeId && 
 				   lhs.ExpirationDate == rhs.ExpirationDate &&
 				   lhs.Name == rhs.Name &&
 				   lhs.Root == rhs.Root &&
