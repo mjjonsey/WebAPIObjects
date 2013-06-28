@@ -180,7 +180,7 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 		
 		public string StatusDescription { get; set; }
 		public string StopPriceText { get; set; }
-		public string TimeStamp { get; set; }
+		public DateTime TimeStamp { get; set; }
 		public string TriggeredBy { get; set; }
 		
 		public static OrderDetail Empty { get { return new OrderDetail(); } }
