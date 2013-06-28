@@ -33,7 +33,7 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 		public decimal MarketValue { get; set; }
 		public decimal OpenProfitLoss { get; set; }
 		public decimal OpenProfitLossPercent { get; set; }
-		public int OpenProfitLossQty { get; set; }
+		public decimal OpenProfitLossQty { get; set; }
 		public int Quantity { get; set; }
 		public decimal RequiredMargin { get; set; }
 		public decimal SettlePrice { get; set; }
