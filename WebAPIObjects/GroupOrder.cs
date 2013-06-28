@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 {
@@ -12,6 +13,7 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 			Orders = new List<Order>(16);
 		}
 
+		[JsonProperty(PropertyName = "Type")]
 		public GroupOrderType GroupType { get; set; }
 		public List<Order> Orders { get; private set; }
 
