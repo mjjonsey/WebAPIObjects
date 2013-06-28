@@ -421,7 +421,12 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 							if (reader.Read()) token.Token = reader.Value.ToString();
 							break;
 						case "expires_in":
-							if (reader.Read()) token.ExpiresIn = reader.Value.ToString();
+							if (reader.Read())
+							{
+								int test;
+								int.TryParse(reader.Value.ToString(), out test);
+								token.ExpiresIn = test;
+							}
 							break;
 						case "token_type":
 							if (reader.Read()) token.Type = reader.Value.ToString();
@@ -656,7 +661,7 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 							if (reader.Read() && reader.Value != null) order.Symbol = reader.Value.ToString();
 							break;
 						case "TimeStamp":
-							if (reader.Read() && reader.Value != null) order.TimeStamp = reader.Value.ToString();
+							if (reader.Read() && reader.Value != null) order.TimeStamp = DateTime.Parse(reader.Value.ToString());
 							break;
 						case "TriggeredBy":
 							if (reader.Read() && reader.Value != null) order.TriggeredBy = reader.Value.ToString();
