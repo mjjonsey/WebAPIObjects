@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 {
@@ -22,5 +23,9 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 			Location = location; 
 		}
 
+		public static Uri GetEnvironmentUri(WebAPIEnvironment environment)
+		{
+			return Environments.First(e => e.Name == environment).Location;
+		}
 	}
 }

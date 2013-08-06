@@ -5,6 +5,7 @@ Object library for the Tradestation WebAPI
 
 History: 
 
+08/02/2013  Added static helper method GetEnvironmentUrl to WebAPILocation class.  
 08/02/2013  Cleanup  
 07/23/2013  Fixed ForexAccountCurrencyDetail which was supposed to be a superclass of AccountCurrencyDetail  
 06/28/2013	Set the Json property name of GroupOrder.GroupOrderType to "Type"  
