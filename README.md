@@ -5,6 +5,7 @@ Object library for the Tradestation WebAPI
 
 History: 
 
+08/05/2013  Added missing functionality to the Json Order converter for OSO orders.  
 08/02/2013  Added static helper method GetEnvironmentUrl to WebAPILocation class.  
 08/02/2013  Cleanup  
 07/23/2013  Fixed ForexAccountCurrencyDetail which was supposed to be a superclass of AccountCurrencyDetail  

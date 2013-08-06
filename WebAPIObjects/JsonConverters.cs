@@ -330,7 +330,31 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 			writer.WriteValue(order.TradeAction.ToString());
 
 			// TODO: Advanced options skipped
-			// TODO: OSO's skipped
+			if (order.OSOs.Count > 0)
+			{
+				writer.WritePropertyName("OSOs");
+				writer.WriteStartArray();
+				foreach (GroupOrder group in order.OSOs)
+				{
+					writer.WriteStartObject();
+					writer.WritePropertyName("Type");
+					writer.WriteValue(group.GroupType.ToString());
+
+					writer.WritePropertyName("Orders");
+					writer.WriteStartArray();
+
+					for (int i = 0; i < group.Orders.Count; i++)
+					{
+						Order innerOrder = group.Orders[i];
+						WriteJson(writer, innerOrder, serializer);
+						//if (i < group.Orders.Count -1) writer.WriteRaw(",");
+					}
+
+					writer.WriteEndArray();
+				}
+				writer.WriteEndObject();
+				writer.WriteEndArray();
+			}
 			
 
 			writer.WriteEndObject(); 
