@@ -5,6 +5,7 @@ Object library for the Tradestation WebAPI
 
 History: 
 
+07/23/2013  Fixed ForexAccountCurrencyDetail which was supposed to be a superclass of AccountCurrencyDetail
 06/28/2013	Set the Json property name of GroupOrder.GroupOrderType to "Type"  
 06/28/2013	Changed the Position.OpenProfitLossQty property to decimal from int.  
 06/28/2013	Changed the Order.TimeStamp property to DateTime from string.  

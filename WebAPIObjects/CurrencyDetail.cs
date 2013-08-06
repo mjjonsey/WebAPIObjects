@@ -15,7 +15,6 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 		public decimal RealTimeAccountUnrealizedProfitLoss { get; set; }
 		public decimal RealTimeRealizedProfitLoss { get; set; }
 		public decimal RealTimeAccountRealizedProfitLoss { get; set; }
-        public static AccountCurrencyDetail Empty { get { return new AccountCurrencyDetail(); } }
 
         #region overloads and overrides
 
@@ -86,7 +85,8 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 		public decimal RealTimeAccountInitMargin { get; set; }
 		public decimal RealTimeMaintenanceMargin { get; set; }
 		public decimal RealTimeAccountMaintenanceMargin { get; set; }
-        public static new FuturesAccountCurrencyDetail Empty { get { return new FuturesAccountCurrencyDetail(); } }
+        public static FuturesAccountCurrencyDetail Empty { get { return new FuturesAccountCurrencyDetail(); } }
+
 
         #region overloads and overrides
 
@@ -146,7 +146,7 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
         #endregion overloads and overrides
 	}
 
-	public class ForexAccountCurrencyDetail
+	public class ForexAccountCurrencyDetail : AccountCurrencyDetail
 	{
 		public decimal BODMarginRequirement { get; set; }
 		public decimal BODAccountMarginRequirement { get; set; }
