@@ -36,7 +36,7 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
         [DebuggerStepThrough()]
         public override bool Equals(object obj)
         {
-            return this.Equals(obj as Error);
+            return Equals(obj as Error);
         }
 
         [DebuggerStepThrough()]

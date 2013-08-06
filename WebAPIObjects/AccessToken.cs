@@ -48,7 +48,7 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 
 		#region properties
 		private bool _hasExpirationWarningFired;
-		private Timer _timer;
+		private readonly Timer _timer;
 		private DateTime _expirationDate = DateTime.MinValue;
 
 		public DateTime ExpirationDate

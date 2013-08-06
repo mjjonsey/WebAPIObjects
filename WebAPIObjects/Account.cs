@@ -124,7 +124,7 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 	        if (ReferenceEquals(lhs, null) || ReferenceEquals(rhs, null))
 		        return false;
 
-	        return  (Account)lhs == (Account)rhs && 
+	        return  lhs == (Account)rhs && 
 	                lhs.BODMarginRequirement == rhs.BODMarginRequirement &&
 	                lhs.Currency == rhs.Currency &&
 	                Utility.ListsAreEqual(lhs.CurrencyDetails, rhs.CurrencyDetails) && 
@@ -148,9 +148,8 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
         {
             ForexAccount token = obj as ForexAccount;
             if (token != null)
-                return this.Equals(token);
-            else
-                return false;
+                return Equals(token);
+	        return false;
         }
 
         [DebuggerStepThrough()]
@@ -196,33 +195,31 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
         [DebuggerStepThrough()]
         public static bool operator ==(EquityAccount lhs, EquityAccount rhs)
         {
-            if (ReferenceEquals(lhs, rhs))
+	        if (ReferenceEquals(lhs, rhs))
                 return true;
-            else if (ReferenceEquals(lhs, null) || ReferenceEquals(rhs, null))
-                return false;
-            else
-                return (Account)lhs == (Account)rhs && 
-                    lhs.BODDayTradingMarginableEquitiesBuyingPower == rhs.BODDayTradingMarginableEquitiesBuyingPower &&
-                    lhs.BODOptionBuyingPower == rhs.BODOptionBuyingPower && 
-                    lhs.BODOptionValue == rhs.BODOptionValue && 
-                    lhs.BODOvernightBuyingPower == rhs.BODOvernightBuyingPower && 
-                    lhs.Brokerage == rhs.Brokerage && 
-                    lhs.CanDayTrade == rhs.CanDayTrade && 
-                    lhs.Commission == rhs.Commission && 
-                    lhs.DayTrades == rhs.DayTrades && 
-                    lhs.DayTradingQualified == rhs.DayTradingQualified && 
-                    lhs.OptionApprovalLevel == rhs.OptionApprovalLevel && 
-                    lhs.PatternDayTrader == rhs.PatternDayTrader &&
-                    lhs.RealTimeCostOfPositions == rhs.RealTimeCostOfPositions && 
-                    lhs.RealTimeDayTradingMarginableEquitiesBuyingPower == rhs.RealTimeDayTradingMarginableEquitiesBuyingPower &&
-                    lhs.RealTimeOptionBuyingPower == rhs.RealTimeOptionBuyingPower && 
-                    lhs.RealTimeOptionValue == rhs.RealTimeOptionValue && 
-                    lhs.RealTimeOvernightBuyingPower == rhs.RealTimeOvernightBuyingPower && 
-                    lhs.UnsettledFund == rhs.UnsettledFund;
-
+	        if (ReferenceEquals(lhs, null) || ReferenceEquals(rhs, null))
+		        return false;
+	        return lhs == (Account)rhs && 
+	               lhs.BODDayTradingMarginableEquitiesBuyingPower == rhs.BODDayTradingMarginableEquitiesBuyingPower &&
+	               lhs.BODOptionBuyingPower == rhs.BODOptionBuyingPower && 
+	               lhs.BODOptionValue == rhs.BODOptionValue && 
+	               lhs.BODOvernightBuyingPower == rhs.BODOvernightBuyingPower && 
+	               lhs.Brokerage == rhs.Brokerage && 
+	               lhs.CanDayTrade == rhs.CanDayTrade && 
+	               lhs.Commission == rhs.Commission && 
+	               lhs.DayTrades == rhs.DayTrades && 
+	               lhs.DayTradingQualified == rhs.DayTradingQualified && 
+	               lhs.OptionApprovalLevel == rhs.OptionApprovalLevel && 
+	               lhs.PatternDayTrader == rhs.PatternDayTrader &&
+	               lhs.RealTimeCostOfPositions == rhs.RealTimeCostOfPositions && 
+	               lhs.RealTimeDayTradingMarginableEquitiesBuyingPower == rhs.RealTimeDayTradingMarginableEquitiesBuyingPower &&
+	               lhs.RealTimeOptionBuyingPower == rhs.RealTimeOptionBuyingPower && 
+	               lhs.RealTimeOptionValue == rhs.RealTimeOptionValue && 
+	               lhs.RealTimeOvernightBuyingPower == rhs.RealTimeOvernightBuyingPower && 
+	               lhs.UnsettledFund == rhs.UnsettledFund;
         }
 
-        [DebuggerStepThrough()]
+		[DebuggerStepThrough()]
         public static bool operator !=(EquityAccount lhs, EquityAccount rhs)
         {
             return !(lhs == rhs);
@@ -239,9 +236,8 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
         {
             EquityAccount token = obj as EquityAccount;
             if (token != null)
-                return this.Equals(token);
-            else
-                return false;
+                return Equals(token);
+	        return false;
         }
 
         [DebuggerStepThrough()]
@@ -284,26 +280,24 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
         [DebuggerStepThrough()]
         public static bool operator ==(FuturesAccount lhs, FuturesAccount rhs)
         {
-            if (ReferenceEquals(lhs, rhs))
+	        if (ReferenceEquals(lhs, rhs))
                 return true;
-            else if (ReferenceEquals(lhs, null) || ReferenceEquals(rhs, null))
-                return false;
-            else
-                return (Account)lhs == (Account)rhs && 
-                    lhs.BODOpenTradeEquity == rhs.BODOpenTradeEquity &&
-                    lhs.Commission == rhs.Commission && 
-                    lhs.Currency == rhs.Currency && 
-                    Utility.ListsAreEqual(lhs.CurrencyDetails, rhs.CurrencyDetails) && 
-                    lhs.OpenOrderMargin == rhs.OpenOrderMargin &&
-                    lhs.RealTimeInitialMargin == rhs.RealTimeInitialMargin && 
-                    lhs.RealTimeMaintenanceMargin == rhs.RealTimeMaintenanceMargin &&
-                    lhs.RealTimeTradeEquity == rhs.RealTimeTradeEquity &&
-                    lhs.SecurityOnDeposit == rhs.SecurityOnDeposit && 
-                    lhs.TodayRealTimeTradeEquity == rhs.TodayRealTimeTradeEquity;
-
+	        if (ReferenceEquals(lhs, null) || ReferenceEquals(rhs, null))
+		        return false;
+	        return lhs == (Account)rhs && 
+	               lhs.BODOpenTradeEquity == rhs.BODOpenTradeEquity &&
+	               lhs.Commission == rhs.Commission && 
+	               lhs.Currency == rhs.Currency && 
+	               Utility.ListsAreEqual(lhs.CurrencyDetails, rhs.CurrencyDetails) && 
+	               lhs.OpenOrderMargin == rhs.OpenOrderMargin &&
+	               lhs.RealTimeInitialMargin == rhs.RealTimeInitialMargin && 
+	               lhs.RealTimeMaintenanceMargin == rhs.RealTimeMaintenanceMargin &&
+	               lhs.RealTimeTradeEquity == rhs.RealTimeTradeEquity &&
+	               lhs.SecurityOnDeposit == rhs.SecurityOnDeposit && 
+	               lhs.TodayRealTimeTradeEquity == rhs.TodayRealTimeTradeEquity;
         }
 
-        [DebuggerStepThrough()]
+		[DebuggerStepThrough()]
         public static bool operator !=(FuturesAccount lhs, FuturesAccount rhs)
         {
             return !(lhs == rhs);
@@ -320,9 +314,8 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
         {
             FuturesAccount token = obj as FuturesAccount;
             if (token != null)
-                return this.Equals(token);
-            else
-                return false;
+                return Equals(token);
+	        return false;
         }
 
         [DebuggerStepThrough()]

@@ -16,11 +16,10 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 		{
 			if (ReferenceEquals(lhs, rhs))
 				return true;
-			else if (ReferenceEquals(lhs, null) || ReferenceEquals(rhs, null))
+			if (ReferenceEquals(lhs, null) || ReferenceEquals(rhs, null))
 				return false;
-			else
-				return lhs.ByPoints == rhs.ByPoints &&
-					lhs.Value == rhs.Value;
+			return lhs.ByPoints == rhs.ByPoints &&
+			       lhs.Value == rhs.Value;
 		}
 
 		[DebuggerStepThrough()]
@@ -40,9 +39,8 @@ namespace TradeStation.SystemTeam.Tools.WebAPI.WebAPIObjects
 		{
 			TrailingStop token = obj as TrailingStop;
 			if (token != null)
-				return this.Equals(token);
-			else
-				return false;
+				return Equals(token);
+			return false;
 		}
 
 		[DebuggerStepThrough()]
